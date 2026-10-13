@@ -1,0 +1,25 @@
+[Unit]
+Description=NetCheck API (VPC test backend)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=netcheck
+WorkingDirectory=/opt/netcheck-api
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOST=127.0.0.1
+Environment=ENABLE_TCP_CHECK=true
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=3
+
+# Basic hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

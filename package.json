@@ -1,0 +1,17 @@
+{
+  "name": "netcheck-api",
+  "version": "1.0.0",
+  "description": "Throwaway CRUD API with Swagger and network diagnostics for testing the MediXpert VPC (subnets, NAT, SGs).",
+  "main": "src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "swagger-ui-express": "5.0.1"
+  }
+}
